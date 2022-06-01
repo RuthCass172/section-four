@@ -40,6 +40,12 @@ public class Main {
         // Seconds and mins challenge
         System.out.println(getDurationString(65,44));
         System.out.println(getDurationString(3945));
+
+        // Area calculator challenge
+        System.out.println(AreaCalculator.area(5.0));
+        System.out.println(AreaCalculator.area(-1));
+        System.out.println(AreaCalculator.area(5.0, 4.0));
+        System.out.println(AreaCalculator.area(-1.0, 4.0));
     }
 
     public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
