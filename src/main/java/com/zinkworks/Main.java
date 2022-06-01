@@ -37,6 +37,9 @@ public class Main {
         calcFeetAndInchesToCm(7,5);
         calcFeetAndInchesToCm(100);
 
+        // Seconds and mins challenge
+        System.out.println(getDurationString(65,44));
+        System.out.println(getDurationString(3945));
     }
 
     public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
@@ -85,5 +88,24 @@ public class Main {
             return calcFeetAndInchesToCm(feet, remainder);
         }
         return -1;
+    }
+
+    // Overloaded methods for seconds and mins challenge
+    public static String getDurationString(int mins, int seconds) {
+        if (mins >= 0 || seconds >= 0 || seconds <= 59) {
+            int hours = mins / 60;
+            int remainder = mins % 60;
+            return hours + "h " + remainder + "m " + seconds + "s";
+        }
+        return "Invalid value";
+    }
+
+    public static String getDurationString(int seconds) {
+        if (seconds >= 0) {
+            int mins = seconds / 60;
+            int remainder = seconds % 60;
+            return getDurationString(mins, remainder);
+        }
+        return "Invalid";
     }
 }
