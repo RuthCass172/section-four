@@ -27,6 +27,9 @@ public class Main {
         int position4 = calculateHighScorePosition(50);
         displayHighScorePosition("Paul", position4);
 
+        // Speed converter challenge
+        SpeedConverter.printConversion(10.5);
+
     }
 
     public static int calculateScore(boolean gameOver,int score, int levelCompleted, int bonus) {
