@@ -30,6 +30,9 @@ public class Main {
         // Speed converter challenge
         SpeedConverter.printConversion(10.5);
 
+        // MegaByte converter challenge
+        MegaBytesConverter.printMegaBytesAndKiloBytes(2500);
+
     }
 
     public static int calculateScore(boolean gameOver,int score, int levelCompleted, int bonus) {
