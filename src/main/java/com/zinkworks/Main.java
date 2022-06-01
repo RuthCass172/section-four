@@ -33,11 +33,15 @@ public class Main {
         // MegaByte converter challenge
         MegaBytesConverter.printMegaBytesAndKiloBytes(2500);
 
+        // Calculate challenge
+        calcFeetAndInchesToCm(7,5);
+        calcFeetAndInchesToCm(100);
+
     }
 
-    public static int calculateScore(boolean gameOver,int score, int levelCompleted, int bonus) {
+    public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
 
-        if(gameOver) {
+        if (gameOver) {
             int finalScore = score + (levelCompleted * bonus);
             finalScore += 2000;
 
@@ -60,5 +64,26 @@ public class Main {
             return 3;
         }
         return 4;
+    }
+
+    public static double calcFeetAndInchesToCm(double feet, double inches) {
+        if (feet < 0 || inches < 0 || inches > 12) {
+            System.out.println("Invalid feet or inches");
+            return -1;
+        }
+        double cm = (feet * 12) * 2.54;
+        cm += inches * 2.54;
+        System.out.println(feet + " feet, " + inches + " inches = " + cm + " cm");
+        return cm;
+    }
+
+    public static double calcFeetAndInchesToCm(double inches) {
+        if (inches >= 0) {
+            double feet = (int) inches / 12;
+            double remainder = (int) inches % 12;
+            System.out.println(inches + " inches is equal to " + feet + " feet and " + remainder + " inches");
+            return calcFeetAndInchesToCm(feet, remainder);
+        }
+        return -1;
     }
 }
