@@ -39,6 +39,7 @@ public class Main {
 
         // Seconds and mins challenge
         System.out.println(getDurationString(65,44));
+        System.out.println(getDurationString(0,-1));
         System.out.println(getDurationString(3945));
 
         // Area calculator challenge
@@ -102,7 +103,7 @@ public class Main {
     public static String getDurationString(int mins, int seconds) {
         String result = "Invalid value";
 
-        if (mins >= 0 || seconds >= 0 || seconds <= 59) {
+        if (mins >= 0 && seconds >= 0 && seconds <= 59) {
             int hours = mins / 60;
             int remainder = mins % 60;
             result = hours + "h " + remainder + "m " + seconds + "s";
