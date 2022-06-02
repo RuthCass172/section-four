@@ -49,15 +49,15 @@ public class Main {
     }
 
     public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
-
+        int result = -1;
         if (gameOver) {
             int finalScore = score + (levelCompleted * bonus);
             finalScore += 2000;
 
-            return finalScore;
+            result = finalScore;
         }
 
-        return -1;
+        return result;
     }
 
     public static void displayHighScorePosition(String name, int position) {
@@ -65,52 +65,59 @@ public class Main {
     }
 
     public static int calculateHighScorePosition(int score) {
+        int result = 4;
         if (score >= 1000) {
-            return 1;
+            result = 1;
         } else if (score >= 500) {
-            return 2;
+            result = 2;
         } else if (score >= 100) {
-            return 3;
+            result = 3;
         }
-        return 4;
+        return result;
     }
 
     public static double calcFeetAndInchesToCm(double feet, double inches) {
+        double result = feet * 12 * 2.54 + inches * 2.54;
         if (feet < 0 || inches < 0 || inches > 12) {
             System.out.println("Invalid feet or inches");
-            return -1;
+            result = -1;
         }
-        double cm = feet * 12 * 2.54 + inches * 2.54;
-        System.out.println(feet + " feet, " + inches + " inches = " + cm + " cm");
-        return cm;
+        System.out.println(feet + " feet, " + inches + " inches = " + result + " cm");
+        return result;
     }
 
     public static double calcFeetAndInchesToCm(double inches) {
+        double result = -1;
+
         if (inches >= 0) {
             double feet = (int) inches / 12;
             double remainder = (int) inches % 12;
             System.out.println(inches + " inches is equal to " + feet + " feet and " + remainder + " inches");
-            return calcFeetAndInchesToCm(feet, remainder);
+            result = calcFeetAndInchesToCm(feet, remainder);
         }
-        return -1;
+        return result;
     }
 
     // Overloaded methods for seconds and mins challenge
     public static String getDurationString(int mins, int seconds) {
+        String result = "Invalid value";
+
         if (mins >= 0 || seconds >= 0 || seconds <= 59) {
             int hours = mins / 60;
             int remainder = mins % 60;
-            return hours + "h " + remainder + "m " + seconds + "s";
+            result = hours + "h " + remainder + "m " + seconds + "s";
         }
-        return "Invalid value";
+        return result;
     }
 
     public static String getDurationString(int seconds) {
+        String result = "Invalid value";
+
         if (seconds >= 0) {
             int mins = seconds / 60;
             int remainder = seconds % 60;
-            return getDurationString(mins, remainder);
+            result = getDurationString(mins, remainder);
         }
-        return "Invalid";
+        return result;
     }
 }
