@@ -80,8 +80,7 @@ public class Main {
             System.out.println("Invalid feet or inches");
             return -1;
         }
-        double cm = (feet * 12) * 2.54;
-        cm += inches * 2.54;
+        double cm = feet * 12 * 2.54 + inches * 2.54;
         System.out.println(feet + " feet, " + inches + " inches = " + cm + " cm");
         return cm;
     }
